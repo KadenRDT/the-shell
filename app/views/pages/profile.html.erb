@@ -14,11 +14,13 @@
         </div>
     </div>
     <div class="col-xs-6">
+        <% for @post in @posts %>
         <div class="panel panel-default">
             <div class="panel-body">
-                <p>Peeks</p>
+                <p><%= @post.content %></p>
             </div>
         </div>
+        <% end %>
     </div>
     <div class="col-xs-3">
         <div class="panel panel-default">
@@ -26,11 +28,6 @@
                 <p>Who To Follow</p>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-3 col-xs-offset-9">
         <div class="panel panel-default">
             <div class="panel-body">
                 <p>Popular</p>

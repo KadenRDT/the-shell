@@ -1,2 +1,133 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if user_signed_in? %>
+<style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/bg.png") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+        .description {
+            color: #eeeeee;
+            font-size: 150%;
+        }
+        .container-index {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            font-size: 80%;
+            margin-top: 15%;
+        }
+        .log-in {
+            float: right;
+            width: 300px;
+            height: 150px;
+            margin-top: 5%;
+        }
+        .sign-up {
+            float: right;
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+    <div class="container-index row">
+        <div class="col-sm-6">
+            <h1>Welcome to The Shell.</h1>
+            <p class="description">
+                The only real social networking site.
+                Peek out to share media, text, and locations
+                to your friends across the world.
+                Unlike any other social media site, our content is
+                unfiltered and unmoderated. Share as much drama
+                and use as much profanity as you want!
+                Sound like your kind of site? Join the club!
+                Meet new people and come out of your shell today.
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/user/<%= current_user.username %>" role="button">Visit Your Profile</a></p>
+        </div>
+        <div class="col-sm-6">
+            <div class="log-in panel">
+                Log In
+            </div>
+            <div class="sign-up panel">
+                Sign Up
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <p class="footer">About | Help | Status | Terms | Privacy | Directory | © 2016 The Shell</p>
+        </div>
+    </div>
+<% else %>
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/bg.png") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+        .description {
+            color: #eeeeee;
+            font-size: 150%;
+        }
+        .container-index {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            font-size: 80%;
+            margin-top: 15%;
+        }
+        .log-in {
+            float: right;
+            width: 300px;
+            height: 150px;
+            margin-top: 5%;
+        }
+        .sign-up {
+            float: right;
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+    <div class="container-index row">
+        <div class="col-sm-6">
+            <h1>Welcome to The Shell.</h1>
+            <p class="description">
+            The only real social networking site.
+            Peek out to share media, text, and locations
+            to your friends across the world.
+            Unlike any other social media site, our content is
+            unfiltered and unmoderated. Share as much drama
+            and use as much profanity as you want!
+            Sound like your kind of site? Join the club!
+            Meet new people and come out of your shell today.
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="/users/sign_up" role="button">Sign Up</a></p>
+       </div>
+        <div class="col-sm-6">
+            <div class="log-in panel">
+                Log In
+            </div>
+            <div class="sign-up panel">
+                Sign Up
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <p class="footer">About | Help | Status | Terms | Privacy | Directory | © 2016 The Shell</p>
+        </div>
+    </div>
+<% end %>
